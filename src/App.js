@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Model from "./pages/Model";
 
 class App extends Component {
 	constructor() {
@@ -12,8 +13,7 @@ class App extends Component {
 		const { ready } = this.state;
 		return (
 			<div>
-				{ready}
-				<p />
+				<Model />
 			</div>
 		);
 	}
