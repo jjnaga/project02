@@ -12,10 +12,12 @@ const Model = () => {
 	));
 
 	return (
-		<div className="test">
-			<h1>{header.name}</h1>
-			<img src={image} alt={`${header.name}`} />
-			<div id="content">
+		<div className="container">
+			<div className="header">
+				<h1 className="name">{header.name}</h1>
+				<img id="image" src={image} alt={`${header.name}`} />
+			</div>
+			<div className="content">
 				<ul>{data}</ul>
 			</div>
 		</div>
