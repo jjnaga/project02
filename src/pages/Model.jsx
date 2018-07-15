@@ -12,7 +12,7 @@ const Model = () => {
 	));
 
 	return (
-		<div id="cover">
+		<div className="test">
 			<h1>{header.name}</h1>
 			<img src={image} alt={`${header.name}`} />
 			<div id="content">
