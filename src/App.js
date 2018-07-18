@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Model from "./pages/Model";
+import Model from "./Model/Model";
 
 class App extends Component {
 	constructor() {
