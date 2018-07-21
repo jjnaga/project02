@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Page from "./BMW/Page";
+
+import Header from "./components/Header";
+import Page from "./components/Page";
 
 class App extends Component {
 	constructor() {
@@ -13,6 +15,7 @@ class App extends Component {
 		const { ready } = this.state;
 		return (
 			<div>
+				<Header />
 				<Page />
 			</div>
 		);

@@ -19,7 +19,7 @@ Specs.defaultProps = {
 };
 
 Specs.propTypes = {
-	specs: PropTypes.objectOf({
+	specs: PropTypes.shape({
 		horsepower: PropTypes.number.isRequired,
 		torque: PropTypes.number.isRequired,
 		weight: PropTypes.number.isRequired,

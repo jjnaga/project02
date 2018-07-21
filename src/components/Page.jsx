@@ -2,10 +2,10 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
 import API from "../../api/API";
-import Specs from "./components/specs";
-import Config from "./components/config";
-import Aftermarket from "./components/aftermarket";
-import FAQ from "./components/faq";
+import Specs from "./Page/specs";
+import Config from "./Page/config";
+import Aftermarket from "./Page/aftermarket";
+import FAQ from "./Page/faq";
 
 const Page = () => {
 	const { header, image, specs } = API;

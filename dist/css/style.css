@@ -7,8 +7,14 @@
 	height: 100vh;
 }
 
+.navbar {
+	grid-column: 1 / -1;
+	background: gray;
+	text-align: center;
+	padding: 15px;
+}
+
 header {
-	grid-column: span 3;
 	text-align: left;
 	font-size: 1.4em;
 	color: white;
