@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Model from "./Model/Model";
+import Page from "./BMW/Page";
 
 class App extends Component {
 	constructor() {
@@ -13,7 +13,7 @@ class App extends Component {
 		const { ready } = this.state;
 		return (
 			<div>
-				<Model />
+				<Page />
 			</div>
 		);
 	}

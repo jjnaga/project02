@@ -1,100 +1,35 @@
-/* Fundamentals by Jayden Seric: https://goo.gl/FF9jhL */
-html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-body {
-	margin: 0;
-	font: 16px/1 sans-serif;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-}
-h1,
-h2,
-h3,
-h4,
-p,
-blockquote,
-figure,
-ol,
-ul {
-	margin: 0;
-	padding: 0;
-}
-main,
-li {
-	display: block;
-}
-h1,
-h2,
-h3,
-h4 {
-	font-size: inherit;
-}
-strong {
-	font-weight: bold;
-}
-a,
-button {
-	color: inherit;
-	transition: 0.3s;
-}
-a {
-	text-decoration: none;
-}
-button {
-	overflow: visible;
-	border: 0;
-	font: inherit;
-	-webkit-font-smoothing: inherit;
-	letter-spacing: inherit;
-	background: none;
-	cursor: pointer;
-}
-::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-:focus {
-	outline: 0;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
-}
-
-/* END OF FUNDAMENTALS */
-
 .container {
+	/* Grid */
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"header "
-		"main"
-		"main";
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 350px 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 15px;
+	height: 100vh;
 }
 
-.header {
-	position: relative;
-}
-.name {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	background-color: black;
+header {
+	grid-column: span 3;
+	text-align: left;
+	font-size: 1.4em;
 	color: white;
-	padding-left: 20px;
-	padding-right: 20px;
+	grid-column: 1 / -1;
+	grid-row: 1;
 }
 
-.image {
-	grid-area: header;
+nav {
+	text-align: right;
+	line-height: 2.5em;
 }
 
-img {
-	display: block;
+footer {
+	grid-column: span 3;
+	padding: 30px;
+	text-align: center;
+	font-size: 1.4em;
+	background-color: #690;
+}
+
+image {
 	max-width: 100%;
-	height: auto;
+	max-height: 100%;
 }

@@ -1,14 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Content = ({ specs }) => (
 	<div id="Content">
 		<ul>
-			<li>Horsepower: {specs.horsepower}</li>
-			<li />
-			<li />
-			<li />
-			<li />
+			<li>
+				<Link to="/">Specs</Link>
+			</li>
+			<li>
+				<Link to="/config">Configuration</Link>
+			</li>
+			<li>
+				<Link to="/aftermarket">Aftermarket</Link>
+			</li>
+			<li>
+				<Link to="/faq">F&Q</Link>
+			</li>
 		</ul>
 	</div>
 );

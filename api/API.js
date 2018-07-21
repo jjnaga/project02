@@ -27,7 +27,7 @@
 
 const API = {
 	header: {
-		name: "F82 BMW M4",
+		name: "BMW M4",
 	},
 	image: `images/m4.jpg`,
 	specs: {
