@@ -23,7 +23,7 @@ const Page = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to="/">Specs</Link>
+						<Link to="/specs">Specs</Link>
 					</li>
 					<li>
 						<Link to="/config">Config</Link>
@@ -40,8 +40,7 @@ const Page = () => {
 			<main>
 				<Switch>
 					<Route
-						exact
-						path="/"
+						path="/specs"
 						render={props => <Specs {...props} specs={specs} />}
 					/>
 					<Route path="/config" component={Config} />

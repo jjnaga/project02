@@ -26,6 +26,7 @@
 // }
 
 const API = {
+	companies: ["BMW", "Audi", "Toyota"],
 	header: {
 		name: "BMW M4",
 	},
