@@ -23,29 +23,30 @@ const Page = () => {
 			<nav>
 				<ul>
 					<li>
-						<Link to="/specs">Specs</Link>
+						<Link to="/BMW/specs">Specs</Link>
 					</li>
 					<li>
-						<Link to="/config">Config</Link>
+						<Link to="/BMW/config">Config</Link>
 					</li>
 					<li>
-						<Link to="/aftermarket">Aftermarket</Link>
+						<Link to="/BMW/aftermarket">Aftermarket</Link>
 					</li>
 					<li>
-						<Link to="/faq">FAQ</Link>
+						<Link to="/BMW/faq">FAQ</Link>
 					</li>
 				</ul>
 			</nav>
 
 			<main>
+				{/* TODO: Don't hardcode /BMW/*, instead have it use parent route  */}
 				<Switch>
 					<Route
-						path="/specs"
+						path="/BMW/specs"
 						render={props => <Specs {...props} specs={specs} />}
 					/>
-					<Route path="/config" component={Config} />
-					<Route path="/aftermarket" component={Aftermarket} />
-					<Route path="/faq" component={FAQ} />
+					<Route path="/BMW/config" component={Config} />
+					<Route path="/BMW/aftermarket" component={Aftermarket} />
+					<Route path="/BMW/faq" component={FAQ} />
 				</Switch>
 			</main>
 		</div>

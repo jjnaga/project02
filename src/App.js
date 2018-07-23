@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./components/Topbar";
 import Home from "./components/Home";
@@ -13,8 +13,14 @@ const App = () => {
 	return (
 		<div>
 			<Topbar />
-			<Route path="/" render={() => <Home companies={companies} />} />
-			<Route path="/bmw" component={Page} />
+			<Switch>
+				<Route
+					exact
+					path="/"
+					render={() => <Home companies={companies} />}
+				/>
+				<Route path="/BMW" component={Page} />
+			</Switch>
 		</div>
 	);
 };

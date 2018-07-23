@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Home = ({ companies }) => {
 	const companyList = companies.map(company => (
-		<li>
+		<li key={company}>
 			<Link to={company}>{company}</Link>
 		</li>
 	));
