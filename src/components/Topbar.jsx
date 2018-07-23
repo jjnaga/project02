@@ -6,7 +6,9 @@ const Header = () => (
 		<li>
 			<Link to="/">Home</Link>
 		</li>
-		<button type="button">Create Hub</button>
+		<li>
+			<Link to="/create">Create Hub</Link>
+		</li>
 	</div>
 );
 

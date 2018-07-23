@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Topbar from "./components/Topbar";
 import Home from "./components/Home";
 import Page from "./components/Page";
+import Create from "./components/Create";
 
 import API from "../api/API";
 
@@ -20,6 +21,7 @@ const App = () => {
 					render={() => <Home companies={companies} />}
 				/>
 				<Route path="/BMW" component={Page} />
+				<Route path="/create" component={Create} />
 			</Switch>
 		</div>
 	);
