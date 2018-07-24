@@ -2,9 +2,11 @@
 	/* Grid */
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 350px 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 15px;
 	height: 100vh;
+	width: 100vw;
+	margin: 0px;
 }
 
 .navbar {
@@ -37,6 +39,15 @@ image {
 	max-height: 100%;
 }
 
+form {
+	margin: auto;
+}
+
 #specs {
 	line-height: 1.5em;
+}
+
+.Create {
+	grid-column: 6 / span 3;
+	grid-row: 4;
 }

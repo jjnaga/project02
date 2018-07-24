@@ -12,7 +12,7 @@ const App = () => {
 	const { companies } = API;
 
 	return (
-		<div>
+		<div className="container">
 			<Topbar />
 			<Switch>
 				<Route
