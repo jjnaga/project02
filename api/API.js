@@ -3,7 +3,7 @@
 // 	header: {
 // 		name
 // 	}
-// 	image: it's either gonna be "image.jpg", or the actual image? Not to sure.
+// 	image: it"s either gonna be "image.jpg", or the actual image? Not to sure.
 // 	specs: {
 // 		horsepower
 // 		torque
@@ -17,7 +17,7 @@
 // 		interior:
 // 		performance:
 // 	}
-// 	// I'm thinking we make this pictures, with links. So like rim - picture
+// 	// I"m thinking we make this pictures, with links. So like rim - picture
 // 	// -link to buy
 // 	aftermarket:
 // 		rim:
@@ -26,7 +26,35 @@
 // }
 
 const API = {
-	companies: ["BMW", "Audi", "Toyota"],
+	companies: [
+		"Acura",
+		"Audi",
+		"BMW",
+		"Cadillac",
+		"Chevrolet",
+		"Chrysler",
+		"Dodge",
+		"Ferrari",
+		"Ford",
+		"GMC",
+		"Honda",
+		"Hyundai",
+		"Infiniti",
+		"Jaguar",
+		"Jeep",
+		"Kia",
+		"Land Rover",
+		"Lexus",
+		"Mazda",
+		"Mercedes-Benz",
+		"Mitsubishi",
+		"Nissan",
+		"Porsche",
+		"Subaru",
+		"Tesla",
+		"Toyota",
+		"Volkswagen",
+	],
 	header: {
 		name: "BMW M4",
 	},
