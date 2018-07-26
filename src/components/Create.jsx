@@ -13,11 +13,14 @@ class Create extends React.Component {
 			yearEnded: 0,
 		};
 
-		this.test = this.test.bind(this);
+		this.handleCompanyChange = this.handleCompanyChange.bind(this);
 		this.handleModelChange = this.handleModelChange.bind(this);
+		this.handleStartChange = this.handleStartChange.bind(this);
+		this.handleEndChange = this.handleEndChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	test(event) {
+	handleCompanyChange(event) {
 		this.setState({ company: event.target.value });
 	}
 
@@ -25,8 +28,26 @@ class Create extends React.Component {
 		this.setState({ model: event.target.value });
 	}
 
+	handleStartChange(event) {
+		this.setState({ yearStarted: event.target.value });
+	}
+
+	handleEndChange(event) {
+		this.setState({ yearEnded: event.target.value });
+	}
+
+	handleSubmit(event) {
+		console.log(`
+			1: ${this.state.company}
+			2: ${this.state.model}
+			3: ${this.state.yearStarted}
+			4: ${this.state.yearEnded}
+		`);
+		event.preventDefault();
+	}
+
 	render() {
-		const { company, model, yearStarted, yearEnded } = this.state;
+		const { model } = this.state;
 
 		const companyList = API.companies.map(data => (
 			<option key={data} value={data}>
@@ -36,8 +57,10 @@ class Create extends React.Component {
 
 		return (
 			<div className="Create">
-				<form className="form-1" action="#">
-					<select onChange={this.test}>{companyList}</select>
+				<form className="form-1" onSubmit={this.handleSubmit}>
+					<select onChange={this.handleCompanyChange}>
+						{companyList}
+					</select>
 					<input
 						type="text"
 						placeholder="Model Name"
@@ -51,6 +74,7 @@ class Create extends React.Component {
 						min="1950"
 						max="2020"
 						step="1"
+						onChange={this.handleStartChange}
 					/>
 					<input
 						type="number"
@@ -59,6 +83,7 @@ class Create extends React.Component {
 						min="1950"
 						max="2020"
 						step="1"
+						onChange={this.handleEndChange}
 					/>
 					<input type="submit" value="Submit" />
 				</form>
