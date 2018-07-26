@@ -10,7 +10,6 @@ import API from "../api/API";
 
 const App = () => {
 	const { companies } = API;
-
 	return (
 		<div className="container">
 			<Topbar />
