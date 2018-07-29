@@ -5,10 +5,9 @@ const Header = ({ initial }) => {
 	const { company, model, yearStarted, yearEnded } = initial;
 	return (
 		<div className="create-header">
-			<p>{company}</p>
-			<p>{model}</p>
-			<p>{yearStarted}</p>
-			<p>{yearEnded}</p>
+			<h1>
+				{model}: {yearStarted} - {yearEnded}
+			</h1>
 		</div>
 	);
 };

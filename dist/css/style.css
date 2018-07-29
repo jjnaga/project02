@@ -17,6 +17,23 @@
 	padding: 15px;
 }
 
+.create-header {
+	grid-column: 1/ -1;
+	background: red;
+	/*	Setting negative margin removes the gap, that is set by "grid-gap".
+	Without this, there is a gap between the Header and Create-Header, which
+	looks unappealing.
+
+	TODO: Figure out a CSS Grid way of doing this, instead of -margin. This is 
+	so ghetto lol, there has to be a way to specify no gap for certain rows. */
+	margin-top: -15px;
+
+	/* Temp */
+	text-align: left;
+	vertical-align: text-bottom;
+	font-size: 35px;
+}
+
 header {
 	text-align: left;
 	font-size: 1.4em;
