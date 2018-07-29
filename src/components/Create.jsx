@@ -15,10 +15,18 @@ class Create extends React.Component {
 			model: "",
 			yearStarted: 0,
 			yearEnded: 0,
+			detailed: {
+				horsepower: 0,
+				torque: 0,
+				weight: 0,
+				zeroToSixity: 0,
+				quarterMile: 0,
+			},
 		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit2 = this.handleSubmit2.bind(this);
 	}
 
 	handleChange(event) {
@@ -27,6 +35,10 @@ class Create extends React.Component {
 
 	handleSubmit(event) {
 		this.setState({ stage: 2 });
+		event.preventDefault();
+	}
+
+	handleSubmit2(event) {
 		event.preventDefault();
 	}
 
@@ -61,6 +73,7 @@ class Create extends React.Component {
 					<DetailedForm
 						initial={initial}
 						handleChange={this.handleChange}
+						handleSubmit={this.handleSubmit2}
 					/>
 				);
 			}

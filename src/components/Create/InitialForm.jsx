@@ -9,32 +9,33 @@ const InitialForm = ({ handleChange, handleSubmit, model, companies }) => {
 	));
 
 	return (
-		<div className="InitialForm">
+		<div className="form-background">
 			<form
-				className="form-1"
-				name="company"
+				className="form"
 				onChange={handleChange}
 				onSubmit={handleSubmit}
 			>
-				<select>{companyList}</select>
-				<input type="text" name="model" placeholder="Model Name" />
-				<input
-					type="number"
-					placeholder="Year Production Started"
-					name="yearStarted"
-					min="1950"
-					max="2020"
-					step="1"
-				/>
-				<input
-					type="number"
-					placeholder="Year Production Ended"
-					name="yearEnded"
-					min="1950"
-					max="2020"
-					step="1"
-				/>
-				<input type="submit" value="Submit" />
+				<div className="form-box">
+					<select>{companyList}</select>
+					<input type="text" name="model" placeholder="Model Name" />
+					<input
+						type="number"
+						placeholder="Year Production Started"
+						name="yearStarted"
+						min="1950"
+						max="2020"
+						step="1"
+					/>
+					<input
+						type="number"
+						placeholder="Year Production Ended"
+						name="yearEnded"
+						min="1950"
+						max="2020"
+						step="1"
+					/>
+					<input type="submit" value="Submit" />
+				</div>
 			</form>
 		</div>
 	);

@@ -1,9 +1,4 @@
 .container {
-	/* Grid */
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 15px;
 	height: 100vh;
 	width: 100vw;
 	margin: 0px;
@@ -11,24 +6,15 @@
 }
 
 .navbar {
-	grid-column: 1 / -1;
+	/* grid-column: 1 / -1; */
 	background: gray;
 	text-align: center;
 	padding: 15px;
 }
 
 .create-header {
-	grid-column: 1/ -1;
+	/* grid-column: 1/ -1; */
 	background: red;
-	/*	Setting negative margin removes the gap, that is set by "grid-gap".
-	Without this, there is a gap between the Header and Create-Header, which
-	looks unappealing.
-
-	TODO: Figure out a CSS Grid way of doing this, instead of -margin. This is 
-	so ghetto lol, there has to be a way to specify no gap for certain rows. */
-	margin-top: -15px;
-
-	/* Temp */
 	text-align: left;
 	vertical-align: text-bottom;
 	font-size: 35px;
@@ -40,16 +26,6 @@ header {
 	color: white;
 	grid-column: 1 / -1;
 	grid-row: 1;
-}
-
-nav {
-	text-align: right;
-	line-height: 2.5em;
-}
-
-main {
-	grid-column: 2 / -1;
-	grid-row: span 5;
 }
 
 image {
@@ -65,7 +41,25 @@ form {
 	line-height: 1.5em;
 }
 
-.Create {
-	grid-column: 6 / span 3;
-	grid-row: 4;
+/* TODO: This is so fucking ugly, fix this shit. */
+.form-background {
+	position: absolute;
+	background-color: gray;
+	border: 0.4em solid black;
+	width: 250px;
+	height: 25rem;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* TODO: This is so fucking ugly, fix this shit. */
+.form-box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
 }
