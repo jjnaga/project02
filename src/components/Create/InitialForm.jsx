@@ -12,15 +12,16 @@ const InitialForm = ({ handleChange, handleSubmit, model, companies }) => {
 		<div className="InitialForm">
 			<form
 				className="form-1"
+				name="company"
 				onChange={handleChange}
 				onSubmit={handleSubmit}
 			>
 				<select>{companyList}</select>
-				<input type="text" placeholder="Model Name" value={model} />
+				<input type="text" name="model" placeholder="Model Name" />
 				<input
 					type="number"
 					placeholder="Year Production Started"
-					name="points"
+					name="yearStarted"
 					min="1950"
 					max="2020"
 					step="1"
@@ -28,7 +29,7 @@ const InitialForm = ({ handleChange, handleSubmit, model, companies }) => {
 				<input
 					type="number"
 					placeholder="Year Production Ended"
-					name="points"
+					name="yearEnded"
 					min="1950"
 					max="2020"
 					step="1"

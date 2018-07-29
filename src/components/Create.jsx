@@ -18,10 +18,6 @@ class Create extends React.Component {
 		};
 
 		this.handleChange = this.handleChange.bind(this);
-		// this.handleCompanyChange = this.handleCompanyChange.bind(this);
-		// this.handleModelChange = this.handleModelChange.bind(this);
-		// this.handleStartChange = this.handleStartChange.bind(this);
-		// this.handleEndChange = this.handleEndChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -29,29 +25,20 @@ class Create extends React.Component {
 		this.setState({ [event.target.name]: event.target.value });
 	}
 
-	// handleCompanyChange(event) {
-	// 	this.setState({ company: event.target.value });
-	// }
-
-	// handleModelChange(event) {
-	// 	this.setState({ model: event.target.value });
-	// }
-
-	// handleStartChange(event) {
-	// 	this.setState({ yearStarted: event.target.value });
-	// }
-
-	// handleEndChange(event) {
-	// 	this.setState({ yearEnded: event.target.value });
-	// }
-
 	handleSubmit(event) {
 		this.setState({ stage: 2 });
 		event.preventDefault();
 	}
 
 	render() {
-		const { companies, stage, model } = this.state;
+		const {
+			companies,
+			stage,
+			model,
+			company,
+			yearEnded,
+			yearStarted,
+		} = this.state;
 
 		switch (stage) {
 			case 1:
@@ -63,10 +50,22 @@ class Create extends React.Component {
 						companies={companies}
 					/>
 				);
-			case 2:
-				return <DetailedForm />;
+			case 2: {
+				const initial = {
+					company,
+					model,
+					yearStarted,
+					yearEnded,
+				};
+				return (
+					<DetailedForm
+						initial={initial}
+						handleChange={this.handleChange}
+					/>
+				);
+			}
 			default:
-				console.log("We fucked up");
+				return <p>Error</p>;
 		}
 	}
 }
