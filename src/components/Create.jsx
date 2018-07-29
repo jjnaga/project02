@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 import InitialForm from "./Create/InitialForm";
 import DetailedForm from "./Create/DetailedForm";
@@ -40,6 +41,20 @@ class Create extends React.Component {
 
 	handleSubmit2(event) {
 		event.preventDefault();
+		console.log("This is working");
+
+		const { detailed } = this.state;
+
+		fetch("http://localhost:3001/API", {
+			method: "get",
+		})
+			.then(console.log("test"))
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+			})
+			.catch(err => console.log(`Error: ${err}`));
+		return <Redirect to="/" />;
 	}
 
 	render() {
