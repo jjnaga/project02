@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 
 import InitialForm from "./Create/InitialForm";
 import DetailedForm from "./Create/DetailedForm";
@@ -16,13 +15,11 @@ class Create extends React.Component {
 			model: "",
 			yearStarted: 0,
 			yearEnded: 0,
-			detailed: {
-				horsepower: 0,
-				torque: 0,
-				weight: 0,
-				zeroToSixity: 0,
-				quarterMile: 0,
-			},
+			horsepower: 0,
+			torque: 0,
+			weight: 0,
+			zeroToSixity: 0,
+			quarterMile: 0,
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -41,12 +38,11 @@ class Create extends React.Component {
 
 	handleSubmit2(event) {
 		event.preventDefault();
-		console.log("This is working");
 
-		const { detailed } = this.state;
-
-		fetch("http://localhost:3001/API", {
-			method: "get",
+		fetch("http://localhost:3001/create", {
+			method: "post",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(this.state),
 		})
 			.then(console.log("test"))
 			.then(res => res.json())
@@ -54,7 +50,10 @@ class Create extends React.Component {
 				console.log(data);
 			})
 			.catch(err => console.log(`Error: ${err}`));
-		return <Redirect to="/" />;
+
+		// (8/29/18) Object deconstructuring doesn't work (and looks uglier IMO)
+		// eslint-disable-next-line
+		this.props.history.push("/");
 	}
 
 	render() {

@@ -17,7 +17,7 @@ const DetailedForm = ({ initial, handleChange, handleSubmit }) => (
 					placeholder="Horsepower"
 					name="horsepower"
 				/>
-				<input type="number" placeholder="Torque" name="horsepower" />
+				<input type="number" placeholder="Torque" name="torque" />
 				<input type="number" placeholder="Weight" name="weight" />
 				<input
 					type="number"
