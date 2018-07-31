@@ -44,5 +44,5 @@ app.use((req, res, next) => {
 app.post("/create", (req, res) => {
 	console.log(`Creating new Hub: ${req.body.model}`);
 	db.collection("models").insertOne(req.body);
-	res.send(200, "I DID IT!");
+	res.status(200).send("I DID IT!");
 });

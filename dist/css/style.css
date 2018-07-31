@@ -41,6 +41,23 @@ form {
 	line-height: 1.5em;
 }
 
+.home-button {
+	background-color: green;
+	width: 100%;
+	height: 75px;
+	max-width: 250px;
+	padding: 15px 30px;
+	text-align: center;
+	display: inline-block;
+}
+
+.Home {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 10px;
+}
+
 /* TODO: This is so fucking ugly, fix this shit. */
 .form-background {
 	position: absolute;
