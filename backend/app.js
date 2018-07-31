@@ -39,10 +39,24 @@ app.use((req, res, next) => {
 /*
  * /create
  *
- * POST: Sends data to server for creation of new hub.
+ * POST: Sends req.body to server for creation of new hub.
  */
 app.post("/create", (req, res) => {
-	console.log(`Creating new Hub: ${req.body.model}`);
-	db.collection("models").insertOne(req.body);
+	const object = {
+		company: req.body.company,
+		model: req.body.model,
+		yearStarted: req.body.yearStarted,
+		yearEnded: req.body.yearEnded,
+		specs: {
+			horsepower: req.body.horsepower,
+			torque: req.body.torque,
+			weight: req.body.weight,
+			zeroToSixty: req.body.zeroToSixty,
+			quarterMile: req.body.quarterMile,
+		},
+	};
+
+	console.log(`Creating new Hub: ${req.body.company} ${req.body.model}`);
+	db.collection("models").insertOne(object);
 	res.status(200).send("I DID IT!");
 });

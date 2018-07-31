@@ -16,7 +16,7 @@ const InitialForm = ({ handleChange, handleSubmit, model, companies }) => {
 				onSubmit={handleSubmit}
 			>
 				<div className="form-box">
-					<select>{companyList}</select>
+					<select name="company">{companyList}</select>
 					<input type="text" name="model" placeholder="Model Name" />
 					<input
 						type="number"
