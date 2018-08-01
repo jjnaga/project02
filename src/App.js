@@ -11,8 +11,27 @@ import API from "../api/API";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			companies: [],
+			models: [],
+		};
 	}
+
+	componentDidMount() {
+		fetch("http://localhost:3001/", {
+			method: "get",
+			headers: {},
+		})
+			.then(res => res.json())
+			.then(data => {
+				this.setState({
+					companies: data.companies,
+					models: data.models,
+				});
+			})
+			.catch(err => console.log(`Error: ${err}`));
+	}
+
 	render() {
 		const { companies } = API;
 		return (

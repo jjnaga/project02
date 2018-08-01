@@ -23,7 +23,7 @@ MongoClient.connect(
 		console.log("Database Connection Ready");
 
 		app.listen(3001, () => {
-			console.log("App now running on port 4000");
+			console.log("App now running on port 3001");
 		});
 	},
 );
@@ -34,6 +34,49 @@ app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 	next();
+});
+
+/**
+ * '/'
+ * Default route.
+ *
+ * GET: Retrieves companies and their respective models.
+ */
+
+// TODO: Is this the best way to do this halfway through 2018? It's clean tho
+// ngl
+app.get("/", async (req, res) => {
+	let companies;
+	let models;
+
+	try {
+		await db
+			.collection("models")
+			.distinct("company")
+			.then(data => {
+				companies = data;
+			});
+		await db
+			.collection("models")
+			.distinct("model")
+			.then(data => {
+				models = data;
+			});
+	} catch {
+		err => console.log(err);
+	} finally {
+		const data = {
+			companies,
+			models,
+		};
+		res.status(200).send(data);
+	}
+
+	db.collection("models")
+		.distinct("company")
+		.then(data => {
+			models = data;
+		});
 });
 
 /*

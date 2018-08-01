@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Home = ({ companies }) => {
 	const companyList = companies.map(company => (
-		<div>
+		<div key={company}>
 			<Link to={company}>
 				<button type="button" className="home-button">
 					{company}
