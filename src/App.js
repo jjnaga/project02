@@ -44,8 +44,8 @@ class App extends React.Component {
 							<Home companies={companies} models={models} />
 						)}
 					/>
-					<Route path="/create" component={Create} />
-					<Route path="/:company" component={HomeBase} />
+					<Route exact path="/:company" component={HomeBase} />
+					<Route exact path="/create" component={Create} />
 				</Switch>
 			</div>
 		);
