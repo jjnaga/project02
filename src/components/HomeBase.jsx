@@ -10,14 +10,17 @@ class HomeBase extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:3001/", {
+		// eslint-disable-next-line
+		const company = this.props.match.params.company;
+
+		fetch(`http://localhost:3001/${company}`, {
 			method: "get",
 			headers: {},
 		})
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
-					models: data.models,
+					models: data,
 				});
 			})
 			.catch(err => console.log(`Error: ${err}`));

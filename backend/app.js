@@ -44,7 +44,6 @@ app.use((req, res, next) => {
  */
 
 // TODO: Is this the best way to do this halfway through 2018? It's clean tho
-// ngl
 app.get("/", async (req, res) => {
 	let companies;
 	let models;
@@ -71,12 +70,38 @@ app.get("/", async (req, res) => {
 		};
 		res.status(200).send(data);
 	}
+});
 
-	db.collection("models")
-		.distinct("company")
-		.then(data => {
-			models = data;
-		});
+app.get("/:company", async (req, res) => {
+	// Simplify the URL Param
+	const company = req.params.company;
+
+	// Create a blank array. I dont' know if we actually need to do this here,
+	// but these 6 lines of code took like a day, so we're fine.
+	let models = [];
+
+	// Creates a cursor, which has all the data of our company.
+	const cursor = db.collection("models").find({ company: company });
+
+	// Await, which is for the Promises. Pushes each model to our array.
+	await cursor.forEach(data => {
+		models.push(data.model);
+	});
+
+	// Sends status OK, and includes array
+	res.status(200).send(models);
+});
+
+app.get("/:company/:model", async (req, res) => {
+	const company = req.params.company;
+	const model = req.params.model;
+
+	const data = await db.collection("models").findOne({
+		company: company,
+		model: model,
+	});
+
+	res.status(200).send(data);
 });
 
 /*
