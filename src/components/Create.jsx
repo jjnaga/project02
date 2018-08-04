@@ -4,7 +4,7 @@ import InitialForm from "./Create/InitialForm";
 import DetailedForm from "./Create/DetailedForm";
 import API from "../../api/API";
 
-// TODO: An example page would be super nice, but that's later.
+// TODO: An example section would be super nice, but that's later.
 class Create extends React.Component {
 	constructor(props) {
 		super(props);

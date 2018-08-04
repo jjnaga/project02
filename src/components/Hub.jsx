@@ -46,7 +46,7 @@ class Page extends React.Component {
 			background: `url(${image})`,
 			backgroundPosition: "center",
 		};
-
+		// TODO:
 		return (
 			<div className="container">
 				<header id="omfg" style={imageBackground}>

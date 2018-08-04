@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Topbar from "./components/Topbar";
 import Home from "./components/Home";
 import HomeBase from "./components/HomeBase";
-import Page from "./components/Page";
+import Hub from "./components/Hub";
 import Create from "./components/Create";
 
 class App extends React.Component {
@@ -45,7 +45,7 @@ class App extends React.Component {
 						)}
 					/>
 					<Route exact path="/create" component={Create} />
-					<Route path="/:company/:model" component={Page} />
+					<Route path="/:company/:model" component={Hub} />
 					<Route path="/:company" component={HomeBase} />
 				</Switch>
 			</div>
