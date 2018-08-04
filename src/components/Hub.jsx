@@ -2,12 +2,12 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
 import API from "../../api/API";
-import Specs from "./Page/specs";
-import Config from "./Page/config";
-import Aftermarket from "./Page/aftermarket";
-import FAQ from "./Page/faq";
+import Specs from "./Hub/specs";
+import Config from "./Hub/config";
+import Aftermarket from "./Hub/aftermarket";
+import FAQ from "./Hub/faq";
 
-class Page extends React.Component {
+class Hub extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,7 +16,7 @@ class Page extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("componentdidmount - Page.jsx");
+		console.log("componentdidmount - Hub.jsx");
 		// eslint-disable-next-line
 		const company = this.props.match.params.company;
 		// eslint-disable-next-line
@@ -32,6 +32,7 @@ class Page extends React.Component {
 					data,
 				});
 			})
+			.then(console.log(this.state.data))
 			.catch(err => console.log(`Error: ${err}`));
 	}
 
@@ -39,14 +40,14 @@ class Page extends React.Component {
 		// I get an error when I do this.state.data, vs this.state
 		// TOOD: Really, is this the best way to do this? No way right?
 		// eslint-disable-next-line
-		const { model } = this.state.data;
-		const { header, image, specs } = API;
+		const { url } = this.props.match;
+		const { model, specs } = this.state.data;
+		const { image } = API;
 
 		const imageBackground = {
 			background: `url(${image})`,
 			backgroundPosition: "center",
 		};
-		// TODO:
 		return (
 			<div className="container">
 				<header id="omfg" style={imageBackground}>
@@ -55,16 +56,16 @@ class Page extends React.Component {
 				<nav>
 					<ul>
 						<li>
-							<Link to="/BMW/specs">Specs</Link>
+							<Link to={`${url}/specs`}>Specs</Link>
 						</li>
 						<li>
-							<Link to="/BMW/config">Config</Link>
+							<Link to={`${url}/config`}>Config</Link>
 						</li>
 						<li>
-							<Link to="/BMW/aftermarket">Aftermarket</Link>
+							<Link to={`${url}/aftermarket`}>Aftermarket</Link>
 						</li>
 						<li>
-							<Link to="/BMW/faq">FAQ</Link>
+							<Link to={`${url}/faq`}>FAQ</Link>
 						</li>
 					</ul>
 				</nav>
@@ -73,15 +74,15 @@ class Page extends React.Component {
 					{/* TODO: Don't hardcode /BMW/*, instead have it use parent route  */}
 					<Switch>
 						<Route
-							path="/BMW/specs"
+							path={`${url}/specs`}
 							render={props => <Specs {...props} specs={specs} />}
 						/>
-						<Route path="/BMW/config" component={Config} />
+						<Route path={`${url}/config`} component={Config} />
 						<Route
-							path="/BMW/aftermarket"
+							path={`${url}/aftermarket`}
 							component={Aftermarket}
 						/>
-						<Route path="/BMW/faq" component={FAQ} />
+						<Route path={`${url}/faq`} component={FAQ} />
 					</Switch>
 				</main>
 			</div>
@@ -89,4 +90,4 @@ class Page extends React.Component {
 	}
 }
 
-export default Page;
+export default Hub;

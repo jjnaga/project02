@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Home = ({ companies, models }) => {
+	companies.sort();
 	const companyList = companies.map(company => (
 		<div key={company}>
 			<Link to={company}>

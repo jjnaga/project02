@@ -10,7 +10,7 @@ const Specs = ({ specs }) => {
 				<li>Torque: {specs.torque}</li>
 				<li>Weight: {specs.weight}</li>
 				<li>0-60: {specs.zeroToSixty}</li>
-				<li>0-10: {specs.zeroToHundred}</li>
+				<li>0-100: {specs.zeroToHundred}</li>
 				<li>Quarter Mile: {specs.quarterMile}</li>
 			</ul>
 		</div>
