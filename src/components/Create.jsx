@@ -2,7 +2,6 @@ import React from "react";
 
 import InitialForm from "./Create/InitialForm";
 import DetailedForm from "./Create/DetailedForm";
-import API from "../../api/API";
 
 // TODO: An example section would be super nice, but that's later.
 class Create extends React.Component {
@@ -10,7 +9,35 @@ class Create extends React.Component {
 		super(props);
 		this.state = {
 			stage: 1,
-			companies: API.companies,
+			companies: [
+				"Acura",
+				"Audi",
+				"BMW",
+				"Cadillac",
+				"Chevrolet",
+				"Chrysler",
+				"Dodge",
+				"Ferrari",
+				"Ford",
+				"GMC",
+				"Honda",
+				"Hyundai",
+				"Infiniti",
+				"Jaguar",
+				"Jeep",
+				"Kia",
+				"Land Rover",
+				"Lexus",
+				"Mazda",
+				"Mercedes-Benz",
+				"Mitsubishi",
+				"Nissan",
+				"Porsche",
+				"Subaru",
+				"Tesla",
+				"Toyota",
+				"Volkswagen",
+			],
 			company: "",
 			model: "",
 			yearStarted: 0,

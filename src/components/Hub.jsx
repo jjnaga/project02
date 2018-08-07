@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
-import API from "../../api/API";
 import Specs from "./Hub/specs";
 import Config from "./Hub/config";
 import Aftermarket from "./Hub/aftermarket";
@@ -32,7 +31,6 @@ class Hub extends React.Component {
 					data,
 				});
 			})
-			.then(console.log(this.state.data))
 			.catch(err => console.log(`Error: ${err}`));
 	}
 
@@ -42,17 +40,10 @@ class Hub extends React.Component {
 		// eslint-disable-next-line
 		const { url } = this.props.match;
 		const { model, specs } = this.state.data;
-		const { image } = API;
 
-		const imageBackground = {
-			background: `url(${image})`,
-			backgroundPosition: "center",
-		};
 		return (
 			<div className="container">
-				<header id="omfg" style={imageBackground}>
-					{model}
-				</header>
+				<header id="omfg">{model}</header>
 				<nav>
 					<ul>
 						<li>

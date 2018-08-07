@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./components/Topbar";
+import Ethos from "./components/Ethos";
 import Home from "./components/Home";
 import HomeBase from "./components/HomeBase";
 import Hub from "./components/Hub";
@@ -36,18 +37,23 @@ class App extends React.Component {
 		return (
 			<div className="container">
 				<Topbar />
-				<Switch>
-					<Route
-						exact
-						path="/"
-						render={() => (
-							<Home companies={companies} models={models} />
-						)}
-					/>
-					<Route exact path="/create" component={Create} />
-					<Route path="/:company/:model" component={Hub} />
-					<Route path="/:company" component={HomeBase} />
-				</Switch>
+				<div className="home-left">
+					<Ethos />
+				</div>
+				<div className="home-right">
+					<Switch>
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<Home companies={companies} models={models} />
+							)}
+						/>
+						<Route exact path="/create" component={Create} />
+						<Route path="/:company/:model" component={Hub} />
+						<Route path="/:company" component={HomeBase} />
+					</Switch>
+				</div>
 			</div>
 		);
 	}

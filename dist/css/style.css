@@ -1,8 +1,31 @@
 .container {
+	/** Grid */
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
 	height: 100vh;
 	width: 100vw;
 	margin: 0px;
-	background: #32658c;
+	background: #0c0e13;
+}
+
+.Header {
+	margin-top: 35px;
+	background: black;
+	grid-column: 1 / -1;
+	padding: 15px;
+}
+
+.home-left {
+	grid-row: 2;
+	grid-column: 1;
+}
+
+.home-right {
+	grid-row: 2;
+	grid-column: 2;
 }
 
 .navbar {
@@ -41,21 +64,9 @@ form {
 	line-height: 1.5em;
 }
 
-.home-button {
-	background-color: green;
-	width: 100%;
-	height: 75px;
-	max-width: 250px;
-	padding: 15px 30px;
-	text-align: center;
-	display: inline-block;
-}
-
-.Home {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: auto;
-	grid-gap: 10px;
+.home-left {
+	width: 400px;
+	height: 500px;
 }
 
 /* TODO: This is so fucking ugly, fix this shit. */
@@ -79,4 +90,86 @@ form {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
+}
+
+/** Ethos */
+.Ethos {
+	/** Grid */
+	display: grid;
+	padding: 25px;
+	justify-items: center;
+	grid-template-rows: auto 1fr auto;
+	grid-auto-rows: auto;
+	grid-gap: 30px;
+	height: 100%;
+
+	/** Styling */
+	color: white;
+	background: #0f2027; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to left,
+		#2c5364,
+		#203a43,
+		#0f2027
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#2c5364,
+		#203a43,
+		#0f2027
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-radius: 10px;
+}
+
+.ethos-logo {
+	font-size: 50px;
+}
+
+.ethos-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	grid-row: auto;
+	border: 0;
+	color: white;
+	padding: 10px;
+	justify-items: center;
+}
+
+.ethos-button {
+	background: blue;
+	border-radius: 10px;
+	height: 40px;
+	width: 150px;
+}
+
+/** Header */
+.header-button {
+	color: white;
+	background: #3f69aa;
+	padding: 15px;
+	text-align: center;
+	margin-left: 15px;
+	border-radius: 12px;
+}
+
+/** Home */
+.Home {
+	/** Grid */
+	display: grid;
+	grid-auto-columns: minmax(50px, 1fr);
+	justify-items: center;
+	grid-gap: 20px;
+
+	width: 500px;
+	height: 100%;
+}
+
+.home-button {
+	background: #3f69aa;
+	height: 75px;
+	min-width: 150px;
+	padding: 15px;
+	text-align: center;
+	border-radius: 12px;
 }
